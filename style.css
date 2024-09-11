@@ -1,0 +1,28 @@
+#productTemplate {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.smallProduct {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.smallProduct a{
+      text-decoration: none;
+      color: black;
+  }
+  
+  .smallProduct img {
+    max-width: 100%;
+    height: auto;
+  }
+
+main h2 {
+    text-align: center;
+    margin-top: 7%;
+    font-family: fantasy;
+}

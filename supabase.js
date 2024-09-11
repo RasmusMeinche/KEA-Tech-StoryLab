@@ -5,7 +5,7 @@ fetch("https://wqcieablytxowrowovbq.supabase.co/rest/v1/T&S", {
     }
 })
 
-    .then(res=>res.json())
+    .then((res)=>res.json())
     .then(showData);
 
 
