@@ -26,3 +26,12 @@ main h2 {
     margin-top: 7%;
     font-family: fantasy;
 }
+
+.btn {
+    display: inline-flex;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #233249;
+    border-radius: 0.2rem;
+    margin-top: 5%;
+}
