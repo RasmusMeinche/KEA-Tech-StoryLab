@@ -1,0 +1,46 @@
+/**Variabler**/
+
+html {
+  --primary: #da87a8;
+  --secondary: #ea5045;
+  --tertiary: #233249;
+  --quaternary: #dfe0e4;
+  --quinary: #ffffff;
+
+  --fontsizeh1: 30pt;
+  --fontsizeh2: 14pt;
+  --fontsizeh3: 10pt;
+  --fontsizep: 9pt;
+
+  /* --fontweightheader: 600;
+      --fontweightsubheader: 200;
+      --fontweighttext: 400;
+      --fontweightlink: 300; */
+
+  /******Fonts******/
+  --fontfamily: "Helvetica Neue LT Std";
+}
+
+h1 {
+  font-size: var(--fontsizeh1);
+}
+h2 {
+  font-size: var(--fontsizeh2);
+}
+h3 {
+  font-size: var(--fontsizeh3);
+}
+p {
+  font-size: var(--fontsizep);
+}
+main {
+  background-color: var(--quaternary);
+  color: var(--tertiary);
+}
+footer {
+  background-color: var(--tertiary);
+  color: var(--quinary);
+}
+footer a {
+  color: var(--quinary);
+}
