@@ -1,5 +1,5 @@
 //Når hele HTML-Dokumentet er indlæst, bliver funktionen init kaldt 
-/* window.addEventListener("DOMContentLoaded", init); */
+window.addEventListener("DOMContentLoaded", init);
 
 
 //Kode for categoriliste
@@ -25,7 +25,6 @@ fetch("https://wqcieablytxowrowovbq.supabase.co/rest/v1/T%26S?apikey=eyJhbGciOiJ
     });
   });
 
-
 //Kategorier der mangler:
 /*
 Power Storage & Power Adapters
@@ -34,14 +33,14 @@ Remote-controlled & Robot Devices
  */
 
 
-/* 
+
 //Tager alle URL-parametre fra den aktuelle side (det der står efter ? i URL'en) og gør dem tilgængelige via params
 const params = new URLSearchParams(document.location.search);
 
-const category = params.get("select");
+const category = params.get("category");
 let url = undefined;
 
-if (params.has("select")) {
+if (params.has("category")) {
   // Gør brug af 
   url = `https://wqcieablytxowrowovbq.supabase.co/rest/v1/T%26S?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxY2llYWJseXR4b3dyb3dvdmJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU4OTY4NDMsImV4cCI6MjA0MTQ3Mjg0M30.SJtYsRbBQPSJuze0h2FncM1plrOh-QLb9N3mfSNjeQc&select=*&Taksonomi_1=eq.${category}`;
 } else {
@@ -77,4 +76,3 @@ function showProduct(product) {
   clone.querySelector("h3").textContent = product.Type;
   productList.appendChild(clone);
 }
- */

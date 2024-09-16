@@ -28,14 +28,8 @@ main h2 {
 }
 
 /* Knapper til productlist */
-.btn-container {
-    text-align: right;
-    position: relative;
-    width: 95%;
-    margin: 5% auto;
-}
 
-.left {
+.category-head {
     float: left;
     text-decoration: none;
     color: #233249;
@@ -44,19 +38,35 @@ main h2 {
     font-weight: bolder;
 }
 
-.btn {
+#categorylist {
+    text-align: right;
+    position: relative;
+    width: 95%;
+    margin: 5% auto;
+}
+
+#categorylist li {
     display: inline-flex;
     padding: 10px;
     text-align: center;
     border: 1px solid #233249;
     border-radius: 0.2rem;
     text-decoration: none;
-    color: #233249;
     justify-content: center;
     align-items: center;
 }
 
-.btn:hover{
+#categorylist li a{
+    text-decoration: none;
+    text-align: center;
+    color: #233249;
+}
+
+#categorylist li:hover {
     background-color: #233249;
     color: #ddd;
 }
+#categorylist li a:hover {
+    color: #ddd;
+}
+
