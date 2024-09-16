@@ -1,6 +1,18 @@
 //Når hele HTML-Dokumentet er indlæst, bliver funktionen init kaldt 
 window.addEventListener("DOMContentLoaded", init);
 
+document.querySelector(".one").addEventListener("click", init);
+document.querySelector(".two").addEventListener("click", init);
+document.querySelector(".three").addEventListener("click", init);
+document.querySelector(".four").addEventListener("click", init);
+document.querySelector(".five").addEventListener("click", init);
+document.querySelector(".six").addEventListener("click", init);
+document.querySelector(".seven").addEventListener("click", init);
+document.querySelector(".eight").addEventListener("click", init);
+document.querySelector(".nine").addEventListener("click", init);
+document.querySelector(".ten").addEventListener("click", init);
+document.querySelector(".elleven").addEventListener("click", init);
+document.querySelector(".twelve").addEventListener("click", init);
 
 //Tager alle URL-parametre fra den aktuelle side (det der står efter ? i URL'en) og gør dem tilgængelige via params
 const params = new URLSearchParams(document.location.search);
@@ -41,6 +53,6 @@ function showProducts(json) {
 
 function showProduct(product) {
   const clone = productTemplate.cloneNode(true);
-  clone.querySelector("h3").textContent = product.Type; // Assuming 'Type' is a valid field
-  productList.appendChild(clone); // Append the cloned template
+  clone.querySelector("h3").textContent = product.Type;
+  productList.appendChild(clone);
 }

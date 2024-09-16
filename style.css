@@ -27,11 +27,36 @@ main h2 {
     font-family: fantasy;
 }
 
+/* Knapper til productlist */
+.btn-container {
+    text-align: right;
+    position: relative;
+    width: 95%;
+    margin: 5% auto;
+}
+
+.left {
+    float: left;
+    text-decoration: none;
+    color: #233249;
+    padding: 10px;
+    font-size: larger;
+    font-weight: bolder;
+}
+
 .btn {
     display: inline-flex;
     padding: 10px;
     text-align: center;
     border: 1px solid #233249;
     border-radius: 0.2rem;
-    margin-top: 5%;
+    text-decoration: none;
+    color: #233249;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:hover{
+    background-color: #233249;
+    color: #ddd;
 }
