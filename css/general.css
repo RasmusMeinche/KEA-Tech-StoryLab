@@ -1,14 +1,32 @@
-/**Fonts**/
+/**Fonts fundet på https://www.onlinewebfonts.com/**/
 @font-face {
-  font-family: "helvetica_neue_lt_std77BdCn";
-  src: url("font/helvetica_neue_lt_std_77_bold_condensed-webfont.woff2")
+  font-family: "Helvetica Neue LT Std 77 Bold Condensed";
+  src: url("https://db.onlinewebfonts.com/t/4c29fcc86f895611c127f96e745d6dd4.eot");
+  src: url("https://db.onlinewebfonts.com/t/4c29fcc86f895611c127f96e745d6dd4.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/4c29fcc86f895611c127f96e745d6dd4.woff2")
       format("woff2"),
-    url("helvetica_neue_lt_std_77_bold_condensed-webfont.woff") format("woff");
+    url("https://db.onlinewebfonts.com/t/4c29fcc86f895611c127f96e745d6dd4.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/4c29fcc86f895611c127f96e745d6dd4.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/4c29fcc86f895611c127f96e745d6dd4.svg#Helvetica Neue LT Std 77 Bold Condensed")
+      format("svg");
 }
+
 @font-face {
-  font-family: "helvetica_neue_lt_std55_roman";
-  src: url("font/helvetica_neue_lt_std_55_roman-webfont.woff2") format("woff2"),
-    url("helvetica_neue_lt_std_55_roman-webfont.woff") format("woff");
+  font-family: "Helvetica Neue LT Std 55 Roman";
+  src: url("https://db.onlinewebfonts.com/t/f0db0faa0f4af4630e2db0cd30400f2c.eot");
+  src: url("https://db.onlinewebfonts.com/t/f0db0faa0f4af4630e2db0cd30400f2c.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/f0db0faa0f4af4630e2db0cd30400f2c.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/f0db0faa0f4af4630e2db0cd30400f2c.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/f0db0faa0f4af4630e2db0cd30400f2c.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/f0db0faa0f4af4630e2db0cd30400f2c.svg#Helvetica Neue LT Std 55 Roman")
+      format("svg");
 }
 
 /**Variabler**/
@@ -22,24 +40,29 @@ html {
 }
 
 h1 {
-  font-size: var(--fontsizeh1);
-  font-family: "helvetica_neue_lt_std77BdCn";
+  /**Main header**/
+  font-family: "Helvetica Neue LT Std 77 Bold Condensed";
   font-size: 30pt;
+  color: var(--tertiary);
 }
 h2 {
-  font-size: var(--fontsizeh2);
-  font-family: "helvetica_neue_lt_std77BdCn";
+  /**Subheader**/
+  font-family: "Helvetica Neue LT Std 77 Bold Condensed";
   font-size: 14pt;
+  color: var(--tertiary);
 }
 h3 {
-  font-size: var(--fontsizeh3);
-  font-family: "helvetica_neue_lt_std77BdCn";
+  /**Header i footer**/
+  font-family: "Helvetica Neue LT Std 77 Bold Condensed";
   font-size: 10pt;
+  color: var(--quinary);
 }
 p {
-  font-size: var(--fontsizep);
-  font-family: "helvetica_neue_lt_std55_roman";
+  font-family: "Helvetica Neue LT Std 55 Roman";
   font-size: 9pt;
+}
+a {
+  font-family: "Helvetica Neue LT Std 55 Roman";
 }
 
 main {
