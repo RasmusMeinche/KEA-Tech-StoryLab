@@ -1,38 +1,47 @@
-/**Variabler**/
+/**Fonts**/
+@font-face {
+  font-family: "helvetica_neue_lt_std77BdCn";
+  src: url("font/helvetica_neue_lt_std_77_bold_condensed-webfont.woff2")
+      format("woff2"),
+    url("helvetica_neue_lt_std_77_bold_condensed-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "helvetica_neue_lt_std55_roman";
+  src: url("font/helvetica_neue_lt_std_55_roman-webfont.woff2") format("woff2"),
+    url("helvetica_neue_lt_std_55_roman-webfont.woff") format("woff");
+}
 
+/**Variabler**/
 html {
   --primary: #da87a8;
   --secondary: #ea5045;
   --tertiary: #233249;
   --quaternary: #dfe0e4;
   --quinary: #ffffff;
-
-  --fontsizeh1: 30pt;
-  --fontsizeh2: 14pt;
-  --fontsizeh3: 10pt;
-  --fontsizep: 9pt;
-
-  /* --fontweightheader: 600;
-      --fontweightsubheader: 200;
-      --fontweighttext: 400;
-      --fontweightlink: 300; */
-
-  /******Fonts******/
-  --fontfamily: "Helvetica Neue LT Std";
+  --senary: #d9d9d9; /**OBS denne farve skal ændres**/
 }
 
 h1 {
   font-size: var(--fontsizeh1);
+  font-family: "helvetica_neue_lt_std77BdCn";
+  font-size: 30pt;
 }
 h2 {
   font-size: var(--fontsizeh2);
+  font-family: "helvetica_neue_lt_std77BdCn";
+  font-size: 14pt;
 }
 h3 {
   font-size: var(--fontsizeh3);
+  font-family: "helvetica_neue_lt_std77BdCn";
+  font-size: 10pt;
 }
 p {
   font-size: var(--fontsizep);
+  font-family: "helvetica_neue_lt_std55_roman";
+  font-size: 9pt;
 }
+
 main {
   background-color: var(--quaternary);
   color: var(--tertiary);
@@ -43,4 +52,9 @@ footer {
 }
 footer a {
   color: var(--quinary);
+}
+
+/**Fjerne streg under link**/
+a {
+  text-decoration: none;
 }
