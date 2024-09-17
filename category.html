@@ -6,6 +6,10 @@
     <title>TSL Kladd Kategori Site</title>
     <link rel="stylesheet" href="css/stylecategories.css" />
     <link rel="stylesheet" href="css/general.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
   </head>
   <body class="category">
     <header class="mainNav">
@@ -47,7 +51,12 @@
         det du søger, ved at vælge en kategori, eller benyt dig af vores
         søgefunktion.
       </p>
-      <input type="text" placeholder="Søgefelt" name="search" />
+      <form>
+        <div class="search">
+          <span class="search-icon material-symbols-outlined">search</span>
+          <input class="search-input" type="search" placeholder="Søg" />
+        </div>
+      </form>
       <div class="brandList">
         <section class="letterGroup">
           <div class="category_card">
