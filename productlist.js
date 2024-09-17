@@ -2,7 +2,7 @@
 window.addEventListener("DOMContentLoaded", init);
 
 
-//Kode for categoriliste
+//Kode for kategoriliste
 const categoryList = document.querySelector("#categorylist");
 const uniqueCategories = new Set(); // Opretter et tomt Set til at holde unikke kategorier
 
@@ -17,9 +17,9 @@ fetch("https://wqcieablytxowrowovbq.supabase.co/rest/v1/T%26S?apikey=eyJhbGciOiJ
     categories.forEach((category) => {
       const categoryName = category['Taksonomi1'];
       
-      // Tjek om kategorien allerede er i sættet
+      // Tjekker om kategorien allerede er i sættet
       if (!uniqueCategories.has(categoryName)) {
-        uniqueCategories.add(categoryName); // Tilføj til sættet, hvis den ikke findes
+        uniqueCategories.add(categoryName); // Tilføjes til sættet, hvis den ikke findes
         categoryList.innerHTML += `<li><a href="productlist.html?category=${categoryName}">${categoryName}</a></li>`;
       }
     });
@@ -33,46 +33,38 @@ Remote-controlled & Robot Devices
  */
 
 
-
-//Tager alle URL-parametre fra den aktuelle side (det der står efter ? i URL'en) og gør dem tilgængelige via params
+// Hent kategori-parametret fra URL'en (husk at det er 'category' her, ikke 'Taksonomi1')
 const params = new URLSearchParams(document.location.search);
-
 const category = params.get("category");
+
 let url = undefined;
 
+// Tjek om kategori-parametret er til stede i URL'en
 if (params.has("category")) {
-  // Gør brug af 
-  url = `https://wqcieablytxowrowovbq.supabase.co/rest/v1/T%26S?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxY2llYWJseXR4b3dyb3dvdmJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU4OTY4NDMsImV4cCI6MjA0MTQ3Mjg0M30.SJtYsRbBQPSJuze0h2FncM1plrOh-QLb9N3mfSNjeQc&select=*&Taksonomi_1=eq.${category}`;
+  url = `https://wqcieablytxowrowovbq.supabase.co/rest/v1/T%26S?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxY2llYWJseXR4b3dyb3dvdmJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU4OTY4NDMsImV4cCI6MjA0MTQ3Mjg0M30.SJtYsRbBQPSJuze0h2FncM1plrOh-QLb9N3mfSNjeQc&Taksonomi1=eq.${category}`;
 } else {
-  url = "https://wqcieablytxowrowovbq.supabase.co/rest/v1/T%26S?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxY2llYWJseXR4b3dyb3dvdmJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU4OTY4NDMsImV4cCI6MjA0MTQ3Mjg0M30.SJtYsRbBQPSJuze0h2FncM1plrOh-QLb9N3mfSNjeQc";
+  url = "https://wqcieablytxowrowovbq.supabase.co/rest/v1/T%26S?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxY2llYWJseXR4b3dyb3dvdmJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU4OTY4NDMsImV4cCI6MjA0MTQ3Mjg0M30.SJtYsRbBQPSJuze0h2FncM1plrOh-QLb9N3mfSNjeQc&Taksonomi1";
 }
 
 function init() {
-  // Declare productList and productTemplate properly
-  productList = document.querySelector("#productTemplate");
-  console.log("productList", productList);
+  const productList = document.querySelector("#productTemplate");
+  const productTemplate = document.querySelector("template").content;
 
-  productTemplate = document.querySelector("template").content;
-  console.log("productTemplate", productTemplate);
-
-  // Use the dynamically generated 'url'
   fetch(url, {
     method: "GET",
     headers: {
       apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxY2llYWJseXR4b3dyb3dvdmJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU4OTY4NDMsImV4cCI6MjA0MTQ3Mjg0M30.SJtYsRbBQPSJuze0h2FncM1plrOh-QLb9N3mfSNjeQc"
     }
   })
-    .then((res) => res.json())
-    .then(showProducts);
-}
-
-function showProducts(json) {
-  console.log("json", json);
-  json.forEach(showProduct);
+  .then((res) => res.json())
+  .then((json) => {
+    console.log("JSON response:", json);
+    json.forEach(showProduct);
+  });
 }
 
 function showProduct(product) {
   const clone = productTemplate.cloneNode(true);
-  clone.querySelector("h3").textContent = product.Type;
+  clone.querySelector("h3").textContent = product.Taksonomi1;
   productList.appendChild(clone);
 }
