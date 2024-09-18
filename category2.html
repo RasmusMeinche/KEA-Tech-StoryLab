@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TSL Kladd Kategori Site</title>
+    <title>Category Dynamisk</title>
     <link rel="stylesheet" href="css/stylecategories.css" />
     <link rel="stylesheet" href="css/general.css" />
     <link
@@ -57,38 +57,24 @@
           <input class="search-input" type="search" placeholder="Søg" />
         </div>
       </form>
-      <div class="brandList">
-        <section class="letterGroup">
-          <div class="category_card">
-            <a class="studios" href="productlist.html"
-              >Studios - Podcast / Foto & Video</a
-            >
-            <img src="img/clarity_camera-line.svg" alt="studio" />
-          </div>
-          <div class="category_card">
-            <a class="foto_og_video" href="productlist.html">Foto & Video</a>
-            <img src="img/clarity_camera-line.svg" alt="foto og video" />
-          </div>
-          <div class="category_card">
-            <a class="lyd" href="productlist.html">Lyd</a>
-            <img src="img/microphone.svg" alt="sound" />
-          </div>
-          <div class="category_card">
-            <a class="kabler_adaptere" href="productlist.html"
-              >Kabler & Adaptere</a
-            >
-            <img src="img/cable.svg" alt="cables" />
-          </div>
-          <div class="category_card">
-            <a class="stromforsyning" href="productlist.html">Strømforsyning</a>
-            <img src="img/electricity.svg" alt="electricity" />
-          </div>
-          <div class="category_card">
-            <a class="lagring" href="productlist.html">Lagring</a>
-            <img src="img/sdcard.svg" alt="sd card" />
-          </div>
-        </section>
-      </div>
+      <section id="categoryList">
+        <template>
+          <article>
+            <div class="category_card">
+              <a href="productlist.html" class="studios">
+                Studios - Podcast / Foto & Video
+              </a>
+            </div>
+          </article>
+        </template>
+        <img src="img/clarity_camera-line.svg" alt="kamera" />
+        <img src="img/clarity_camera-line.svg" alt="foto og video" />
+        <img src="img/microphone.svg" alt="sound" />
+        <img src="img/cable.svg" alt="cables" />
+        <img src="img/electricity.svg" alt="electricity" />
+        <img src="img/sdcard.svg" alt="sd card" />
+      </section>
+
       <p>
         I Tech & Story Lab kan du eksperimentere med ny teknologi og på egen
         hånd lære at arbejde med forskelligt udstyr. Vi har lige fra kameraer,
@@ -131,7 +117,6 @@
             src="https://www.youtube.com/watch?v=voz6jsylJ2Q?autoplay=1&mute=1"
           >
           </iframe>
-
           <!-- <img
             alt=""
             href="https://matterport.com/discover/space/2JhLGf6UncX"
@@ -163,6 +148,7 @@
       </div>
     </main>
     <script src="supabase.js"></script>
+    <script src="category2.js"></script>
     <!-- <script src="category.js"></script> -->
     <footer>
       <div>
@@ -217,3 +203,36 @@
     </footer>
   </body>
 </html>
+<!-- 
+<div class="brandList">
+    <section class="letterGroup">
+      <div class="category_card">
+        <a class="studios" href="productlist.html"
+          >Studios - Podcast / Foto & Video</a
+        >
+        <img src="img/clarity_camera-line.svg" alt="studio" />
+      </div>
+      <div class="category_card">
+        <a class="foto_og_video" href="productlist.html">Foto & Video</a>
+        <img src="img/clarity_camera-line.svg" alt="foto og video" />
+      </div>
+      <div class="category_card">
+        <a class="lyd" href="productlist.html">Lyd</a>
+        <img src="img/microphone.svg" alt="sound" />
+      </div>
+      <div class="category_card">
+        <a class="kabler_adaptere" href="productlist.html"
+          >Kabler & Adaptere</a
+        >
+        <img src="img/cable.svg" alt="cables" />
+      </div>
+      <div class="category_card">
+        <a class="stromforsyning" href="productlist.html">Strømforsyning</a>
+        <img src="img/electricity.svg" alt="electricity" />
+      </div>
+      <div class="category_card">
+        <a class="lagring" href="productlist.html">Lagring</a>
+        <img src="img/sdcard.svg" alt="sd card" />
+      </div>
+    </section>
+  </div> -->
