@@ -6,6 +6,7 @@
     <title>TSL Kladd Kategori Site</title>
     <link rel="stylesheet" href="css/stylecategories.css" />
     <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="menu.css">
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
@@ -13,13 +14,29 @@
   </head>
   <body class="category">
     <header class="mainNav">
-      <nav>
+      <!-- <div class="logo">
+        <a href="category.html">
+            <img src="img/logo.svg" alt="Logo">
+        </a>
+    </div> -->
+    <nav>
+        <ul class="menu">
+            <li><a href="category.html">Kategorier</a></li>
+            <li><a href="productlist.html">Produktliste</a></li>
+            <li><a href="product.html">Produkt</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+      <!-- <nav>
         <a href="">KEA Logo</a>
         <a href="category.html">Categories ></a>
         <a href="productlist.html">Product List ></a>
         <a href="#">Product</a>
-      </nav>
-      
+      </nav> -->
     </header>
     <main>
       <div class="header_image">
@@ -185,6 +202,7 @@
     </main>
     <script src="supabase.js"></script>
     <script src="category.js"></script>
+    <script src="menu.js"></script>
     <footer>
       <div>
         <h3>KEA - Københavns Erhvervsakademi</h3>

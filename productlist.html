@@ -1,58 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Products By Brand</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body class="productlist">
-  <header class="mainNav">
-    <a href="index.html">
-      <h1>K<span>E</span>A</h1>
-    </a>
-    <nav>
-      <a href="category.html">Categories ></a>
-      <a href="#">Brands ></a>
-      <a href="#">Seasons</a>
-    </nav>
-  </header>
-  <main>
-    <div class="btn-container">
-      <a class="left">Kategori</a>
-      <a class="btn one" href="#">Studios</a>
-      <a class="btn two" href="#">Studios</a>
-      <a class="btn three" href="#">Studios</a>
-      <a class="btn four" href="#">Studios</a>
-      <a class="btn five" href="#">Studios</a>
-      <a class="btn six" href="#">Studios</a>
-      <a class="btn seven" href="#">Studios</a>
-      <a class="btn eight" href="#">Studios</a>
-      <a class="btn nine" href="#">Studios</a>
-      <a class="btn ten" href="#">Studios</a>
-      <a class="btn elleven" href="#">Studios</a>
-      <a class="btn twelve" href="#">Studios</a>
-  </div>
-    <h2>Products</h2>
-    <section id="productTemplate"></section>
-<template>
-    <article class="smallProduct">
-      <a href="product.html" class="Linked">
-      <img src="" alt="hej"/>
-      <h3>Bing Bong</h3>
-      <p class="subtle"><span class="type">Tshirts </span> | <span class="brand">Nike</span></p>
-      <p>Prev. DKK <span class="price"></span>,-</p>
-      <div class="discounted">
-        <p>Now <span></span> DKK,-</p>
-        <p><span></span>%</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products By Brand</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="general.css" />
+  </head>
+  <body class="productlist">
+    <header class="mainNav">
+      <a href="index.html">
+        <h1>K<span>E</span>A</h1>
+      </a>
+      <nav>
+        <a href="category.html">Categories ></a>
+        <a href="#">Brands ></a>
+        <a href="#">Seasons</a>
+      </nav>
+    </header>
+    <main>
+      <div class="grid-header">
+        <img
+          src="./img/android-chrome-192x192.png"
+          alt="Logo"
+          width="50px"
+          height="50px"
+        />
+        <h1>Tech & Story Lab</h1>
       </div>
-      <a class="read-more" href="product.html">Read More</a>
-    </a>
-    </article>
-</template>
-  </main>
-  <script src="productlist.js"></script>
-</body>
-
+      <section id="categorylist">
+        <p class="category-head">Kategori</p>
+        <template id="category-template"
+          ><li class="category-item">
+            <a href="productlist.html">Accessories</a>
+          </li></template
+        >
+        <ol class="flex-container"></ol>
+      </section>
+      <a href="product.html"></a>
+      <h1 class="categoryHeader">Audio/Photo/Video Equipment</h1>
+      <div class="wrap-mainText">
+        <h2 class="mainText">
+          Her finder du alt lige fra forskellige kameraer, objektiver og
+          stabilisatorer til diverse tripods, mikrofoner og lysudstyr. Hvad
+          enten du er på udkig efter grej til fx portræt- og produktbilleder,
+          interviews eller podcasts, har vi alt, du har brug for.
+        </h2>
+      </div>
+      <h2 class="subHeader">Products</h2>
+      <section id="productListSection"></section>
+      <template id="second">
+        <article class="smallProduct">
+          <a href="product.html" class="Linked">
+            <h2 class="topHead">Bing Bong</h2>
+            <img src="./img/tripod.webp" alt="hej" />
+            <p class="subtle">
+              <span class="type">Tshirts </span> |
+              <span class="brand">Nike</span>
+            </p>
+            <a class="read-more" href="product.html">Tekst beskrivelse</a>
+          </a>
+        </article>
+      </template>
+      <footer></footer>
+    </main>
+    <script src="productlist.js"></script>
+  </body>
 </html>
