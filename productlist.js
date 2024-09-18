@@ -63,6 +63,7 @@ productTemplate = document.querySelector("#second").content;
 function showProduct(product) {
   console.log(product)
   const clone = productTemplate.cloneNode(true);
-  clone.querySelector("h3").textContent = product.Type; 
+  clone.querySelector("h3").textContent = product.Produktnavnogmodel;
+  clone.querySelector(".subtle").textContent = product.Type;
   productList.appendChild(clone); 
 }
