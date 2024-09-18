@@ -75,7 +75,6 @@ main {
 footer {
   background-color: var(--tertiary);
   color: var(--quinary);
-
   display: flex;
   flex-direction: column;
   text-align: center;

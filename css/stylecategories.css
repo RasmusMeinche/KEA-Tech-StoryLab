@@ -30,6 +30,11 @@ footer h3 {
   margin-bottom: 1.3rem;
 }
 
+/**Styling af header image**/
+.header_image img {
+  width: 100%;
+}
+
 /**Styling af logo + header**/
 .logo_header {
   display: flex;
@@ -37,6 +42,16 @@ footer h3 {
 .logo_header img {
   width: 80px;
   height: 80px;
+}
+/**Styling af intro/praktisk info**/
+.praktisk_info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.studiekort {
+  background-color: var(--primary);
+  height: 13rem;
+  width: 16rem;
 }
 
 /**Søgefunktion**/
@@ -114,29 +129,22 @@ footer h3 {
   color: var(--tertiary);
 }
 
-/**Styling af praktisk info**/
-.praktisk_info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.studiekort {
-  background-color: var(--primary);
-  height: 10rem;
-  width: 15rem;
-}
-
 /**Styling af adresse**/
-.adresse {
-  display: grid;
-  grid-template-columns: 1fr auto;
+.adresse .skolekort {
+  width: 350px;
+}
+.adresse img {
+  width: 90%;
 }
 /**Styling af kontakt-del**/
-.kontakt {
+.kontakt_flex {
   display: flex;
   flex-direction: column;
   text-align: center;
   background-color: var(--quinary);
+}
+.kontakt_flex h3 {
+  color: var(--tertiary);
 }
 
 /*********************DESKTOP**********************/
@@ -146,7 +154,11 @@ footer h3 {
     width: 120px;
     height: 120px;
   }
-
+  /**Styling af intro/praktisk info**/
+  .intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
   /**Styling af søgefunktion**/
   .search,
   .search-input {
@@ -196,6 +208,14 @@ footer h3 {
   .category_card img {
     width: 8rem;
     height: 8rem;
+  }
+  /**Styling af adresse**/
+  .adresse {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+  .adresse .skolekort {
+    width: 250px;
   }
   /**Styling af kontakt-del desktop**/
   .kontakt {

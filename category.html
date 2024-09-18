@@ -19,17 +19,31 @@
         <a href="productlist.html">Product List ></a>
         <a href="#">Product</a>
       </nav>
-      <img src="" alt="header image" />
+      
     </header>
     <main>
+      <div class="header_image">
+      <img src="img/headerimagecropped.webp" alt="header image"/>
+    </div>
       <div class="logo_header">
         <img src="img/logo.svg" alt="logo image" />
         <h1>Tech & Story Lab</h1>
       </div>
+      <div class="intro">
+        <div>
       <p>
         Tech & Story Lab er et lab med fokus på ny teknologi for KEAs
-        studerende, undervisere og øvrige ansatte.
+        studerende, undervisere og øvrige ansatte.</p>
+        <p>
+        I Tech & Story Lab kan du eksperimentere med ny teknologi og på egen
+        hånd lære at arbejde med forskelligt udstyr. Vi har lige fra kameraer,
+        mikrofoner og lysudstyr til VR-gear, AI-teknologier, RaspberryPi's og
+        meget mere.</p>
+        <p>
+        Du kan låne et stort udvalg af udstyr og få kyndig vejledning i brugen
+        af det.
       </p>
+    </div>
       <div class="praktisk_info">
         <div class="abingstider">
           <h2>Åbningstider</h2>
@@ -43,8 +57,10 @@
             medbringe dit studiekort.<br />Studiekortet skal være gyldigt og må
             kun benyttes af kortets ejer.
           </p>
+          
         </div>
       </div>
+    </div>
       <h1>KATEGORIER</h1>
       <p>
         Her kan du få et overblik over vores forskellige typer af udstyr.<br />Find,
@@ -57,7 +73,7 @@
           <input class="search-input" type="search" placeholder="Søg" />
         </div>
       </form>
-      <div class="brandList">
+      <div id="categoryList">
         <section class="letterGroup">
           <div class="category_card">
             <a class="studios" href="productlist.html"
@@ -89,16 +105,7 @@
           </div>
         </section>
       </div>
-      <p>
-        I Tech & Story Lab kan du eksperimentere med ny teknologi og på egen
-        hånd lære at arbejde med forskelligt udstyr. Vi har lige fra kameraer,
-        mikrofoner og lysudstyr til VR-gear, AI-teknologier, RaspberryPi's og
-        meget mere.
-      </p>
-      <p>
-        Du kan låne et stort udvalg af udstyr og få kyndig vejledning i brugen
-        af det.
-      </p>
+     
       <h1>Udstyr i Tech & Story Lab</h1>
       <p>
         Du er altid velkommen til at kigge forbi os, hvis du leder efter særligt
@@ -121,49 +128,51 @@
             Tech & Story Lab holder til på Guldbergsgade 29N, 2200 KBH N, i
             stueplan bag receptionen
           </p>
-          <img src="" alt="skolekort" />
+          <img class="skolekort" src="img/skolekort.webp" alt="skolekort" width="350px" />
         </div>
         <div>
           <h2>Se dig omkring i Tech & Story Lab</h2>
-          <iframe
-            width="420"
-            height="315"
-            src="https://www.youtube.com/watch?v=voz6jsylJ2Q?autoplay=1&mute=1"
-          >
-          </iframe>
-
-          <!-- <img
-            alt=""
-            href="https://matterport.com/discover/space/2JhLGf6UncX"
-          /> -->
+          <img src="img/wonderlane-FkHpejze0C4-unsplash.webp" alt="tsl" width="700px">
         </div>
       </div>
-      <div class="kontakt">
+
+      <div class="kontakt_flex">
         <h2>Kontakt</h2>
         <div class="kontakt_flex">
           <div>
-            <img src="" alt="billede frederick" />
-            <h3>Frederick Lehmann Rosling</h3>
-            <p>T: 46 46 04 42</p>
-            <p>E: techandstorylab@kea.dk</p>
-          </div>
-          <div>
-            <img src="" alt="billede luca" />
-            <h3>Luca Fusco</h3>
-            <p>Værkstedsansvarlig</p>
-            <p>E: makerlab@kea.dk</p>
-          </div>
-          <div>
-            <img src="" alt="billede simon" />
-            <h3>Simon Benjamin Christensen</h3>
-            <p>Værkstedsansvarlig</p>
-            <p>E: makerlab@kea.dk</p>
-          </div>
+          <img
+            src="img/f7_person-alt-circle.svg"
+            alt="billede frederick"
+            width="150px"
+          />
+          <h3>Frederick Lehmann Rosling</h3>
+          <p>T: 46 46 04 42</p>
+          <p>E: techandstorylab@kea.dk</p>
+        </div>
+        <div>
+          <img
+            src="img/f7_person-alt-circle.svg"
+            alt="billede luca"
+            width="150px"
+          />
+          <h3>Luca Fusco</h3>
+          <p>Værkstedsansvarlig</p>
+          <p>E: makerlab@kea.dk</p>
+        </div>
+        <div>
+          <img
+            src="img/f7_person-alt-circle.svg"
+            alt="billede simon"
+            width="150px"
+          />
+          <h3>Simon Benjamin Christensen</h3>
+          <p>Værkstedsansvarlig</p>
+          <p>E: makerlab@kea.dk</p>
         </div>
       </div>
     </main>
     <script src="supabase.js"></script>
-    <!-- <script src="category.js"></script> -->
+    <script src="category.js"></script>
     <footer>
       <div>
         <h3>KEA - Københavns Erhvervsakademi</h3>
