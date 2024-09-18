@@ -1,47 +1,116 @@
-/**Variabler**/
-
-html {
+/**Fonts fundet på https://www.onlinewebfonts.com/**/
+@font-face {
+    font-family: "Helvetica Neue LT Std 77 Bold Condensed";
+    src: url("https://db.onlinewebfonts.com/t/4c29fcc86f895611c127f96e745d6dd4.eot");
+    src: url("https://db.onlinewebfonts.com/t/4c29fcc86f895611c127f96e745d6dd4.eot?#iefix")
+        format("embedded-opentype"),
+      url("https://db.onlinewebfonts.com/t/4c29fcc86f895611c127f96e745d6dd4.woff2")
+        format("woff2"),
+      url("https://db.onlinewebfonts.com/t/4c29fcc86f895611c127f96e745d6dd4.woff")
+        format("woff"),
+      url("https://db.onlinewebfonts.com/t/4c29fcc86f895611c127f96e745d6dd4.ttf")
+        format("truetype"),
+      url("https://db.onlinewebfonts.com/t/4c29fcc86f895611c127f96e745d6dd4.svg#Helvetica Neue LT Std 77 Bold Condensed")
+        format("svg");
+  }
+  
+  @font-face {
+    font-family: "Helvetica Neue LT Std 55 Roman";
+    src: url("https://db.onlinewebfonts.com/t/f0db0faa0f4af4630e2db0cd30400f2c.eot");
+    src: url("https://db.onlinewebfonts.com/t/f0db0faa0f4af4630e2db0cd30400f2c.eot?#iefix")
+        format("embedded-opentype"),
+      url("https://db.onlinewebfonts.com/t/f0db0faa0f4af4630e2db0cd30400f2c.woff2")
+        format("woff2"),
+      url("https://db.onlinewebfonts.com/t/f0db0faa0f4af4630e2db0cd30400f2c.woff")
+        format("woff"),
+      url("https://db.onlinewebfonts.com/t/f0db0faa0f4af4630e2db0cd30400f2c.ttf")
+        format("truetype"),
+      url("https://db.onlinewebfonts.com/t/f0db0faa0f4af4630e2db0cd30400f2c.svg#Helvetica Neue LT Std 55 Roman")
+        format("svg");
+  }
+  
+  /**Variabler**/
+  html {
     --primary: #da87a8;
     --secondary: #ea5045;
     --tertiary: #233249;
     --quaternary: #dfe0e4;
     --quinary: #ffffff;
-  
-    --fontsizeh1: 30pt;
-    --fontsizeh2: 14pt;
-    --fontsizeh3: 10pt;
-    --fontsizep: 9pt;
-  
-    /* --fontweightheader: 600;
-        --fontweightsubheader: 200;
-        --fontweighttext: 400;
-        --fontweightlink: 300; */
-  
-    /******Fonts******/
-    --fontfamily: "Helvetica Neue LT Std";
+    --senary: #d9d9d9; /**OBS denne farve skal ændres**/
   }
   
   h1 {
-    font-size: var(--fontsizeh1);
+    /**Main header**/
+    font-family: "Helvetica Neue LT Std 77 Bold Condensed";
+    font-size: 30pt;
+    color: var(--tertiary);
   }
   h2 {
-    font-size: var(--fontsizeh2);
+    /**Subheader**/
+    font-family: "Helvetica Neue LT Std 77 Bold Condensed";
+    font-size: 14pt;
+    color: var(--tertiary);
   }
   h3 {
-    font-size: var(--fontsizeh3);
+    /**Header i footer**/
+    font-family: "Helvetica Neue LT Std 77 Bold Condensed";
+    font-size: 10pt;
+    color: var(--quinary);
   }
   p {
-    font-size: var(--fontsizep);
+    font-family: "Helvetica Neue LT Std 55 Roman";
+    font-size: 9pt;
+    max-width: 65ch;
   }
+  a {
+    font-family: "Helvetica Neue LT Std 55 Roman";
+  }
+  
   main {
     background-color: var(--quaternary);
     color: var(--tertiary);
   }
+  
+  /**Styling af footer**/
   footer {
     background-color: var(--tertiary);
     color: var(--quinary);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  footer div a {
+    font-size: 9pt;
+  
+    display: flex;
+    flex-direction: column;
   }
   footer a {
     color: var(--quinary);
+  }
+  footer a:hover {
+    color: var(--primary);
+  }
+  .social_media {
+    display: flex;
+    justify-content: left;
+  }
+  .social_media img {
+    width: 1.5rem;
+  }
+  
+  @media (min-width: 800px) {
+    /**Styling af footer desktop**/
+    footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      text-align: left;
+    }
+  }
+  
+  /**Fjerne streg under link**/
+  a {
+    text-decoration: none;
   }
   
