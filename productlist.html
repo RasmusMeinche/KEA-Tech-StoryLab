@@ -22,14 +22,16 @@
   <main>
     <div class="grid-header">
       <img src="./img/android-chrome-192x192.png" alt="Logo" width="50px" height="50px">
-      <h1>Tech & Story Lab</h1>
+      <h1 class="TS-Header">Tech & Story Lab</h1>
     </div>
     <section id="categorylist">
-      <p class="category-head">Kategori</p>
+      <h1 class="category-head">KATEGORIER</h1>
       <template id="category-template"><li class="category-item"><a href="productlist.html">Accessories</a></li></template>
       <ol class="flex-container"></ol>
     </section>
-    <a href="product.html"></a>
+    <div class="pil-wrapper">
+      <a href="product.html"><img class="pil" src="./img/right-arrow.png" alt="backspace pil" width="60"></a>
+    </div>
     <h1 class="categoryHeader">Audio/Photo/Video Equipment</h1>
     <div class="wrap-mainText">
       <h2 class="mainText">Her finder du alt lige fra forskellige kameraer, objektiver og stabilisatorer til diverse tripods, mikrofoner og lysudstyr.  Hvad enten du er på udkig efter grej til fx portræt- og produktbilleder, interviews eller podcasts, har vi alt, du har brug for.</h2>
@@ -39,10 +41,10 @@
 <template id="second">
   <article class="smallProduct">
     <a href="product.html" class="Linked">
-      <h2 class="topHead">Bing Bong</h2>
+      <p class="topHead">Bing Bong</p>
       <img src="./img/tripod.webp" alt="hej"/>
       <p class="subtle"><span class="type">Tshirts </span> | <span class="brand">Nike</span></p>
-      <a class="read-more" href="product.html">Tekst beskrivelse</a>
+      <a class="read-more" href="product.html">Her kan du læse en beskrivelse af hvert produkt, så du kan få et indblik i om du er interreseret i at låne udstyret.</a>
     </a>
     </article>
 </template>

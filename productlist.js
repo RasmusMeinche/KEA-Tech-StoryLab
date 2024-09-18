@@ -65,10 +65,11 @@ function showProduct(product) {
   const clone = productTemplate.cloneNode(true);
   clone.querySelector(".topHead").textContent = product.Produktnavnogmodel;
   clone.querySelector(".subtle").textContent = product.Type;
-  productList.appendChild(clone); 
+  productList.appendChild(clone);
+/*   showData() */
 }
 
-function showData(items) {
+/* function showData(items) {
   items.forEach(showImage);
 }
 
@@ -83,4 +84,4 @@ function showImage(item) {
   image.src = `img/${item.img}`;
 
   document.querySelector("body").appendChild(image);
-}
+} */

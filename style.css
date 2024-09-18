@@ -4,16 +4,21 @@ body {
 
 /* Alt tekst til produktliste */
 
+.TS-Header {
+    font-weight: lighter;
+    font-size: 50px;
+}
+
 .grid-header {
     width: 90%;
     position: relative;
-    margin: 0 auto;
+    margin: 0 auto 3%;
     display: flex;
     align-items: center;
 }
 
 .grid-header h1 {
-margin-left: 2%;
+margin-left: 1%;
 }
 
 .categoryHeader {
@@ -22,6 +27,7 @@ margin-left: 2%;
     margin: 0 auto;
     text-align: left;
     margin-bottom: 2%;
+    font-weight: 100;
 }
 
 .wrap-mainText {
@@ -33,14 +39,26 @@ margin-left: 2%;
 }
 
 .mainText {
-    font-weight: lighter;
+    font-weight: 1;
     width: 60%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .subHeader {
     text-align: center;
     margin-top: 7%;
-    font-family: fantasy;
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.pil-wrapper {
+    width: 90%;
+    position: relative;
+    margin: 3% auto 2%;
+}
+
+.pil {
+    transform: rotate(180deg);
 }
 
 /* Knapper til productlist */
@@ -50,8 +68,8 @@ margin-left: 2%;
     text-decoration: none;
     color: #233249;
     padding: 10px;
-    font-size: larger;
-    font-weight: bolder;
+    font-size: 20pt;
+    font-weight: 100;
     transform: translate(0%, -50%);
 }
 
@@ -59,7 +77,7 @@ margin-left: 2%;
     text-align: right;
     position: relative;
     width: 90%;
-    margin: 5% auto;
+    margin: 0% auto;
 }
 
 #categorylist li {
@@ -80,7 +98,7 @@ margin-left: 2%;
     text-decoration: none;
     text-align: center;
     color: #233249;
-    font-weight: bolder;
+    font-weight: 500;
 }
 
 #categorylist li:hover {
@@ -91,7 +109,7 @@ margin-left: 2%;
     color: #ddd;
 }
 
-/* Produktliste */
+/* Produktliste kort*/
 #productListSection {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -109,7 +127,7 @@ margin-left: 2%;
 
 .smallProduct a{
       text-decoration: none;
-      color: black;
+      color: #233249;
   }
   
   .smallProduct img {
@@ -117,6 +135,10 @@ margin-left: 2%;
     height: auto;
   }
 
+  .topHead {
+    font-size: larger;
+    font-weight: bolder;
+  }
 
 .subtle {
     font-size: larger;
