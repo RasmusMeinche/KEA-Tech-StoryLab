@@ -2,6 +2,47 @@ body {
     background-color: #EDEDED;
 }
 
+/* Alt tekst til produktliste */
+
+.grid-header {
+    width: 90%;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.grid-header h1 {
+margin-left: 2%;
+}
+
+.categoryHeader {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+    margin-bottom: 2%;
+}
+
+.wrap-mainText {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+    color: black;
+}
+
+.mainText {
+    font-weight: lighter;
+    width: 60%;
+}
+
+.subHeader {
+    text-align: center;
+    margin-top: 7%;
+    font-family: fantasy;
+}
+
 /* Knapper til productlist */
 
 .category-head {
@@ -11,7 +52,7 @@ body {
     padding: 10px;
     font-size: larger;
     font-weight: bolder;
-    transform: translate(100%, -50%);
+    transform: translate(0%, -50%);
 }
 
 #categorylist {
@@ -30,12 +71,16 @@ body {
     text-decoration: none;
     justify-content: center;
     align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+
 }
 
 #categorylist li a{
     text-decoration: none;
     text-align: center;
     color: #233249;
+    font-weight: bolder;
 }
 
 #categorylist li:hover {
@@ -72,11 +117,6 @@ body {
     height: auto;
   }
 
-main h2 {
-    text-align: center;
-    margin-top: 7%;
-    font-family: fantasy;
-}
 
 .subtle {
     font-size: larger;
