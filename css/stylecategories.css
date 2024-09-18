@@ -8,7 +8,6 @@
 /*************MOBILE FIRST!!!**************/
 
 /**Padding og Margin**/
-
 h1,
 h2,
 h3,
@@ -18,7 +17,6 @@ input,
 img {
   margin: 2rem;
 }
-
 footer a {
   margin: 0.5rem;
 }
@@ -43,20 +41,16 @@ footer h3 {
 
 /**Søgefunktion**/
 .search {
-  /* --padding: 0px; */
-
   width: max-content;
   display: flex;
   align-items: center;
   border-radius: 75px;
   background: #f6f6f6;
-  width: 600px;
+  width: 350px;
   height: 50px;
-  /* transition: background 0.25s; */
   transition: box-shadow 0.25s;
 }
 .search:focus-within {
-  /* background: #f1f1f1; */
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
 }
 .search-input {
@@ -67,7 +61,7 @@ footer h3 {
   outline: none;
   border: none;
   background: transparent;
-  width: 580px;
+  width: 350px;
 }
 .search-input::placeholder,
 .search-icon {
@@ -76,12 +70,31 @@ footer h3 {
 }
 
 /**Styling af kategorier**/
-.letterGroup {
+/**Tidligere styling (statisk)**/
+/* <div class="brandList">
+        <section class="letterGroup">
+          <template class="category_card">
+            <a class="studios" href="productlist.html"
+              >Studios - Podcast / Foto & Video</a
+            >
+            <img src="img/clarity_camera-line.svg" alt="studio" />
+          </template>
+          <ul id="categoryList"></ul>
+        </section>
+      </div>
+       */
+/* .letterGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+} */
+
+/**Ny styling (dynamisk)**/
+#categoryList {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
 }
-
 .category_card {
   display: flex;
   flex-direction: column;
@@ -126,25 +139,6 @@ footer h3 {
   background-color: var(--quinary);
 }
 
-/**Styling af footer**/
-footer {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-footer div a {
-  display: flex;
-  flex-direction: column;
-  font-size: var(--fontsizep);
-}
-.social_media {
-  display: flex;
-  justify-content: left;
-}
-.social_media img {
-  width: 1.5rem;
-}
-
 /*********************DESKTOP**********************/
 @media (min-width: 800px) {
   /**Styling af størrelse på logo**/
@@ -152,8 +146,14 @@ footer div a {
     width: 120px;
     height: 120px;
   }
+
+  /**Styling af søgefunktion**/
+  .search,
+  .search-input {
+    width: 600px;
+  }
   /**Styling af kategorier**/
-  .letterGroup {
+  #categoryList {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -206,12 +206,5 @@ footer div a {
     display: flex;
     flex-direction: row;
     justify-content: center;
-  }
-  /**Styling af footer desktop**/
-  footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    text-align: left;
   }
 }

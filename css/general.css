@@ -60,6 +60,7 @@ h3 {
 p {
   font-family: "Helvetica Neue LT Std 55 Roman";
   font-size: 9pt;
+  max-width: 65ch;
 }
 a {
   font-family: "Helvetica Neue LT Std 55 Roman";
@@ -69,12 +70,44 @@ main {
   background-color: var(--quaternary);
   color: var(--tertiary);
 }
+
+/**Styling af footer**/
 footer {
   background-color: var(--tertiary);
   color: var(--quinary);
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+footer div a {
+  font-size: 9pt;
+
+  display: flex;
+  flex-direction: column;
 }
 footer a {
   color: var(--quinary);
+}
+footer a:hover {
+  color: var(--primary);
+}
+.social_media {
+  display: flex;
+  justify-content: left;
+}
+.social_media img {
+  width: 1.5rem;
+}
+
+@media (min-width: 800px) {
+  /**Styling af footer desktop**/
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+  }
 }
 
 /**Fjerne streg under link**/
