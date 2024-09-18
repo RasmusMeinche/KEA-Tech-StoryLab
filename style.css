@@ -1,27 +1,43 @@
-#productTemplate {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 20px;
+body {
+    background-color: #EDEDED;
 }
 
-.smallProduct {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 10px;
+/* Alt tekst til produktliste */
+
+.grid-header {
+    width: 90%;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
 
-.smallProduct a{
-      text-decoration: none;
-      color: black;
-  }
-  
-  .smallProduct img {
-    max-width: 100%;
-    height: auto;
-  }
+.grid-header h1 {
+margin-left: 2%;
+}
 
-main h2 {
+.categoryHeader {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+    margin-bottom: 2%;
+}
+
+.wrap-mainText {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+    color: black;
+}
+
+.mainText {
+    font-weight: lighter;
+    width: 60%;
+}
+
+.subHeader {
     text-align: center;
     margin-top: 7%;
     font-family: fantasy;
@@ -36,12 +52,13 @@ main h2 {
     padding: 10px;
     font-size: larger;
     font-weight: bolder;
+    transform: translate(0%, -50%);
 }
 
 #categorylist {
     text-align: right;
     position: relative;
-    width: 95%;
+    width: 90%;
     margin: 5% auto;
 }
 
@@ -54,12 +71,16 @@ main h2 {
     text-decoration: none;
     justify-content: center;
     align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+
 }
 
 #categorylist li a{
     text-decoration: none;
     text-align: center;
     color: #233249;
+    font-weight: bolder;
 }
 
 #categorylist li:hover {
@@ -70,3 +91,34 @@ main h2 {
     color: #ddd;
 }
 
+/* Produktliste */
+#productListSection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.smallProduct {
+    background-color: #D9D9D9;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.smallProduct a{
+      text-decoration: none;
+      color: black;
+  }
+  
+  .smallProduct img {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+.subtle {
+    font-size: larger;
+    font-weight: bolder;
+}

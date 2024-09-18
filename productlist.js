@@ -63,6 +63,24 @@ productTemplate = document.querySelector("#second").content;
 function showProduct(product) {
   console.log(product)
   const clone = productTemplate.cloneNode(true);
-  clone.querySelector("h3").textContent = product.Type; 
+  clone.querySelector(".topHead").textContent = product.Produktnavnogmodel;
+  clone.querySelector(".subtle").textContent = product.Type;
   productList.appendChild(clone); 
+}
+
+function showData(items) {
+  items.forEach(showImage);
+}
+
+function showImage(item) {
+  console.log("data item", item);
+
+  const billedeTemplate = document.querySelector("second").content;
+  const copy = billedeTemplate.cloneNode(true);
+
+  const image = copy.querySelector("img");
+  image.alt = "image of " + item.name;
+  image.src = `img/${item.img}`;
+
+  document.querySelector("body").appendChild(image);
 }
