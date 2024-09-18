@@ -1,58 +1,89 @@
-//Når hele HTML-Dokumentet er indlæst, bliver funktionen init kaldt 
+//Når hele HTML-Dokumentet er indlæst, bliver funktionen init kaldt
 window.addEventListener("DOMContentLoaded", init);
 
-document.querySelector(".one").addEventListener("click", init);
-document.querySelector(".two").addEventListener("click", init);
-document.querySelector(".three").addEventListener("click", init);
-document.querySelector(".four").addEventListener("click", init);
-document.querySelector(".five").addEventListener("click", init);
-document.querySelector(".six").addEventListener("click", init);
-document.querySelector(".seven").addEventListener("click", init);
-document.querySelector(".eight").addEventListener("click", init);
-document.querySelector(".nine").addEventListener("click", init);
-document.querySelector(".ten").addEventListener("click", init);
-document.querySelector(".elleven").addEventListener("click", init);
-document.querySelector(".twelve").addEventListener("click", init);
+const key = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxY2llYWJseXR4b3dyb3dvdmJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU4OTY4NDMsImV4cCI6MjA0MTQ3Mjg0M30.SJtYsRbBQPSJuze0h2FncM1plrOh-QLb9N3mfSNjeQc`;
 
-//Tager alle URL-parametre fra den aktuelle side (det der står efter ? i URL'en) og gør dem tilgængelige via params
-const params = new URLSearchParams(document.location.search);
+//Kode for kategoriliste
+const categoryList = document.querySelector("#categorylist");
+const uniqueCategories = new Set(); // Opretter et tomt Set til at holde unikke kategorier
 
-const category = params.get("apikey");
-let url = undefined;
+fetch(
+  "https://wqcieablytxowrowovbq.supabase.co/rest/v1/T%26S?select=Taksonomi1",
+  {
+    method: "GET",
+    headers: {
+      apikey: key,
+    },
+  }
+)
+  .then((response) => response.json())
+  .then((categories) => {
+    categories.forEach((category) => {
+      const categoryName = category["Taksonomi1"];
 
-if (params.has("apikey")) {
-  // Gør brug af 
-  url = `https://wqcieablytxowrowovbq.supabase.co/rest/v1/T%26S?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxY2llYWJseXR4b3dyb3dvdmJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU4OTY4NDMsImV4cCI6MjA0MTQ3Mjg0M30.SJtYsRbBQPSJuze0h2FncM1plrOh-QLb9N3mfSNjeQc&select=${Taksonomi_1}`;
-} else {
-  url = "https://wqcieablytxowrowovbq.supabase.co/rest/v1/T%26S?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxY2llYWJseXR4b3dyb3dvdmJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU4OTY4NDMsImV4cCI6MjA0MTQ3Mjg0M30.SJtYsRbBQPSJuze0h2FncM1plrOh-QLb9N3mfSNjeQc";
-}
+      // Tjekker om kategorien allerede er i sættet
+      if (!uniqueCategories.has(categoryName)) {
+        uniqueCategories.add(categoryName); // Tilføjes til sættet, hvis den ikke findes
+        categoryList.innerHTML += `<li><a href="productlist.html?category=${categoryName}">${categoryName}</a></li>`;
+      }
+    });
+  });
+
+//Kategorier der mangler:
+/*
+Power Storage & Power Adapters
+Computers & Peripheral Devices
+Remote-controlled & Robot Devices
+ */
+
+// Hent kategori-parametret fra URL'en (husk at det er 'category' her, ikke 'Taksonomi1')
+
+let url, productList, productTemplate;
 
 function init() {
-  // Declare productList and productTemplate properly
-  productList = document.querySelector("#productTemplate");
-  console.log("productList", productList);
+  const params = new URLSearchParams(document.location.search);
+  const category = params.get("category");
+  url = `https://wqcieablytxowrowovbq.supabase.co/rest/v1/T%26S?Taksonomi1=eq.${category}`;
+  console.log(url);
+  getData();
+}
+// Tjek om kategori-parametret er til stede i URL'en
 
-  productTemplate = document.querySelector("template").content;
-  console.log("productTemplate", productTemplate);
+function getData() {
+  productList = document.querySelector("#productListSection");
+  productTemplate = document.querySelector("#second").content;
 
-  // Use the dynamically generated 'url'
   fetch(url, {
     method: "GET",
     headers: {
-      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxY2llYWJseXR4b3dyb3dvdmJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU4OTY4NDMsImV4cCI6MjA0MTQ3Mjg0M30.SJtYsRbBQPSJuze0h2FncM1plrOh-QLb9N3mfSNjeQc"
-    }
+      apikey: key,
+    },
   })
     .then((res) => res.json())
-    .then(showProducts);
-}
-
-function showProducts(json) {
-  console.log("json", json);
-  json.forEach(showProduct);
+    .then((json) => json.forEach(showProduct));
 }
 
 function showProduct(product) {
+  console.log(product);
   const clone = productTemplate.cloneNode(true);
-  clone.querySelector("h3").textContent = product.Type;
+  clone.querySelector(".topHead").textContent = product.Produktnavnogmodel;
+  clone.querySelector(".subtle").textContent = product.Type;
   productList.appendChild(clone);
+}
+
+function showData(items) {
+  items.forEach(showImage);
+}
+
+function showImage(item) {
+  console.log("data item", item);
+
+  const billedeTemplate = document.querySelector("second").content;
+  const copy = billedeTemplate.cloneNode(true);
+
+  const image = copy.querySelector("img");
+  image.alt = "image of " + item.name;
+  image.src = `img/${item.img}`;
+
+  document.querySelector("body").appendChild(image);
 }
