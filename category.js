@@ -1,15 +1,17 @@
 const key = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxY2llYWJseXR4b3dyb3dvdmJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU4OTY4NDMsImV4cCI6MjA0MTQ3Mjg0M30.SJtYsRbBQPSJuze0h2FncM1plrOh-QLb9N3mfSNjeQc`;
 const categoryList = document.querySelector("#categoryList");
 const uniqueCategories = new Set(); // Opretter et tomt Set til unikke kategorier
+const params = new URLSearchParams(window.location.search);
+const category = params.get("category");
 
 // Mapping af kategorier til deres respektive SVG-ikoner
 const categoryIcons = {
-  "Studios - Podcast / Foto & Video": "img/clarity_camera-line.svg",
-  "Foto & Video": "img/clarity_camera-line.svg",
-  Lyd: "img/microphone.svg",
-  "Kabler & Adaptere": "img/cable.svg",
-  Strømforsyning: "img/electricity.svg",
-  Lagring: "img/sdcard.svg",
+  "audio/photo/video equipment": "img/clarity_camera-line.svg",
+  "mobile devices": "img/clarity_camera-line.svg",
+  "programmable logic devices": "img/microphone.svg",
+  "board games": "img/cable.svg",
+  "cables & connectors": "img/electricity.svg",
+  "electronic vidual display": "img/sdcard.svg",
 };
 
 fetch(
@@ -22,12 +24,12 @@ fetch(
   }
 )
   .then((response) => response.json())
-  .then((data) => {
-    console.log(data); // Log response data to inspect its structure
+  .then((categories) => {
+    console.log(categories); // Log response data to inspect its structure
 
     // Tjek om 'data' er et array, før vi bruger forEach
-    if (Array.isArray(data)) {
-      data.forEach((category) => {
+    if (Array.isArray(categories)) {
+      categories.forEach((category) => {
         const categoryName = category["Taksonomi1"];
 
         // Tjekker om kategorien allerede er i sættet
@@ -40,18 +42,33 @@ fetch(
           // Opretter HTML-struktur for hver kategori
           const categoryCard = `
             <article class="category_card">
-              <img src="${categoryIcons}" alt="${categoryIcons}" />
+              <img src="${icon}" alt="${categoryName}" />
               <a href="productlist.html?category=${categoryName}">
                 ${categoryName}
               </a>
             </article>
           `;
-
           categoryList.innerHTML += categoryCard;
         }
       });
-    } else {
-      console.error("API'et returnerede ikke et array som forventet.");
     }
-  })
-  .catch((error) => console.error("Fejl ved hentning af kategorier:", error));
+  });
+//   .then(showCategories);
+
+// function showCategories(categories) {
+//   categories.forEach(showCategory);
+// }
+// function showCategory(category) {
+//   //Fanger vores template
+//   const template = document.querySelector("template").content;
+//   //Cloner
+//   const clone = template.cloneNode(true);
+//   //Ændrer indhold
+//   clone.querySelector("a").textContent = category["Taksonomi1"];
+//   clone.querySelector(
+//     "a"
+//   ).href = `produktliste.html?category=${category["Taksonomi1"]}`;
+
+//   //Appenderer
+//   document.querySelector("#categoryList").appendChild(clone);
+// }
