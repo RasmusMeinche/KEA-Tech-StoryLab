@@ -42,7 +42,7 @@ fetch(
           // Opretter HTML-struktur for hver kategori
           const categoryCard = `
             <article class="category_card">
-              <img src="${icon}" alt="${categoryName}" />
+              <img src="${icon}" alt="${icon}" />
               <a href="productlist.html?category=${categoryName}">
                 ${categoryName}
               </a>
